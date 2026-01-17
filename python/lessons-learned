@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+LESSON 1
+
+
+	func isOperator(token: String) -> Bool{
+	    ["+", "-", "*", "/"].contains(token)
+	}
+
+
+	func isOperator(token: String) -> Bool{
+	    
+	    if token == "+" || token == "-" || token == "*" || token == "/"{
+	        return true
+	    }else{
+	        return false
+	    }
+	}
+
+
+LESSON 2
+
+	if topOperatorPrecedence >= tokenPrecedence{
+	    return true
+	}else{
+	    return false
+	}
+
+	return topOperatorPrecedence >= tokenPrecedence
+
+
+
+LESSON 3
+
+    func pushOperator(token: String, operatorStack: inout [String]){
+        operatorStack.append(token)
+    }
+
+
+
+
+LESSON 4
+
+
+var lastChar: String? = numberBuffer.last ?? tokens.last
+
+
+    var lastChar: String?
+    
+    
+    if let lastChar = numberBuffer.last{
+        
+        
+    }else{
+        lastChar = tokens.last
+    }

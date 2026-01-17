@@ -1,0 +1,14 @@
+
+Layout:
+
+    padding: increases the space between the border of a box and the content of the box.
+    margin: increases the space between the borders of a box and the borders of adjacent boxes.
+    border: adds space (even if it’s only a pixel or two) between the margin and the padding.
+
+
+
+
+Syntax Structure:
+    ID vs class: element can only have one ID. It cannot be repeated on a single page and should not contain any whitespace:
+
+    Grouping: combine styling on multiple classes

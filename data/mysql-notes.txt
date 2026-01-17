@@ -1,0 +1,90 @@
+
+
+sudo systemctl start mysql
+sudo systemctl stop mysql
+sudo systemctl status mysql
+
+sudo mysql -u root -p
+
+
+
+
+/// PDO CONNECTION
+
+
+4 VARIABLES
+
+- name of database
+- username and password to access database
+- ip address of database (localhost means look for mysql on same computer)
+
+DSN stands for Data Source Name, and it is a string that contains the necessary information for connecting to a database in a consistent format. In the case of PDO (PHP Data Objects), the DSN specifies the type of database, the server or host, and any additional connection options required.
+
+
+///NOTES ON MYSQL
+
+mysql.user is table of users in the mysql database
+the host coloum is where the user can connect from
+
+
+
+///NOTES ON SYNTAX
+
+
+SELECT
+	
+	- retrives results from functions
+
+
+
+Functions are meant to return a value and cannot modify database schema.
+Stored Procedures can perform operations like CREATE TABLE or INSERT, and do not need to return a value.
+
+
+If you are reloading a procedure that already exists, you may need to drop the existing procedure first using:
+DROP PROCEDURE IF EXISTS create_users_table;
+
+
+///COMMANDS
+
+
+
+sudo systemctl start mysql
+sudo systemctl stop mysql
+sudo systemctl status mysql
+sudo mysql -u root -p
+
+SELECT USER();
+SELECT CURRENT_USER();
+SELECT DATABASE();
+
+CREATE USER 'php'@'localhost' IDENTIFIED BY 'php';
+SELECT user, host FROM mysql.user;
+DROP USER 'new_user'@'localhost';
+GRANT ALL PRIVILEGES ON usr.* TO 'php'@'localhost';
+
+
+
+
+CREATE DATABASE users;
+USE users;
+
+
+
+
+
+SOURCE /home/strider/Desktop/sql/functions.sql;
+SHOW FUNCTION STATUS WHERE Db = 'users';
+DROP FUNCTION IF EXISTS createuser;
+
+
+CALL create_users_table();
+SHOW TABLES;
+SHOW DATABASES;
+
+
+
+show which authentication method is being used(under plugin)
+SELECT user, host, plugin FROM mysql.user WHERE user = 'root';
+
+SHOW VARIABLES LIKE 'socket';

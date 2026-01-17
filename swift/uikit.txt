@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+VIEWS
+
+
+everyone view has a x ,y and width and height
+
+
+
+initilisation
+
+
+    View = UIView(frame: x,y,width,height)
+
+
+
+
+
+
+you can put one view in another
+
+use view.clipped to clip the subview
+
+
+alpha is transparancy property
+
+
+
+
+read/set view position
+
+.frame
+
+    - change the size and position
+
+
+.bounds
+
+    - where the view is within its own coordinate syste m
+
+.center
+
+    - change the position
+
+    - tell you the position of the center of the view releative to the superview
+
+
+
+.transform
+
+    - move shit
+
+
+
+
+UILabel - text box
+
+UIButton
+    - label
+    - imageview
+
+
+ImageView - image holder
+
+
+CG - core graphics, slightly lower level than ui kit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

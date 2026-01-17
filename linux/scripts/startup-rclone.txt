@@ -1,0 +1,9 @@
+[Unit]
+Description=Rclone bisync at startup
+After=network.target
+
+[Service]
+ExecStart=%h/Desktop/engineering/linux/scripts/bisync.sh
+
+[Install]
+WantedBy=default.target

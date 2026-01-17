@@ -1,0 +1,40 @@
+it is recommended to always pair a target=_blank with a rel=noopener noreferrer.
+Relative links only contain filepath to the other page relative to the page where the link is created. 
+Absolute links contain domain name and path
+If relative link breaks try adding ./ at the start to specify relative to the current directory
+To get to the parent directory use ../
+
+vscode boilerplate shortcut - enter ! on first line and press enter
+
+
+
+
+<doctype>
+
+	tell the browser what version of HTML it should use to render the document
+	<!DOCTYPE html>
+
+
+
+<head>
+
+
+	only for meta data
+
+	dont put any element that displays content here
+
+
+<html>
+
+
+	the root element of the document
+
+	should be included in every document
+
+	lang = "en"
+		lang specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. 
+
+
+
+
+		

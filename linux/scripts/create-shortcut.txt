@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Nemo
+Comment=Open Nemo file manager
+Exec=nemo
+Icon=nemo
+Terminal=false
+Type=Application
+Categories=Utility;FileManager;

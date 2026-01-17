@@ -1,0 +1,134 @@
+ENTER ROOT SHELL
+	- sudo -i
+
+
+
+CONNECT
+	- ssh ord@192.168.0.102
+
+TOGGLE LOCAL SSH
+
+	- ip addr show
+	- 192.168.0.102/24
+	- sudo systemctl edit ssh.socket
+	- sudo systemctl daemon-reload
+	- sudo systemctl restart ssh.socket
+
+SENDING FILES TO SERVER
+	- scp /path/to/file.mp4 username@SERVER_IP:/path/on/server/
+	- scp /Users/rob/Downloads/Aloha-from-Hawaii.mp4 ord@192.168.0.102:/home/ord/Desktop
+
+
+
+CONNECT TO JELLYFIN
+	- http://SERVER_IP:8096
+	- http://192.168.0.102:8096
+
+
+DOCKER COMPOSE
+	IF NAMED DOCKER.COMPOSE
+	- sudo docker compose down
+	- sudo docker compose up -d
+
+	OTHERWISE USE -f
+
+
+PACKAGES
+	- s-tui
+	- speedtest
+	- micro
+		- control s
+  		- control q
+		- control e, p     
+		- control u          
+		- control r        
+	- file browser / storage
+		- dust
+		- ncdu
+		- df -h
+	- monitor
+  		- sensors
+  		- top
+  		- htop
+  		- glances
+	- transmission-cli "magnet link"
+	- tmux
+		- detach control+b then d
+		- reattach tmux attach
+		- tmux attach -t <session-name>
+		- tmux ls
+		- tmux kill-server
+		- tmux kill-session -t <session-name>
+		- tmux new -s dev
+
+
+
+
+MOUNT A DRIVE
+	- sudo mkdir -p /mnt/media
+	- lsblk
+	- sudo mount /dev/sdX1 /mnt/media
+	- sudo nano /etc/fstab
+	ADD TO BOTTOM, USE CORRECT FILE SYSTEM:
+	- /dev/sdX1   /mnt/media   ext4   defaults   0   2
+	IF NO ERRORS, WORKS:
+	- sudo mount -a
+
+
+
+PREPARE NEXT CLOUD
+
+	- sudo cryptsetup open /mnt/ord_media/ncdata.img ncdata
+	- sudo mount /dev/mapper/ncdata /mnt/mydocs/nextcloud_data
+
+	#!/bin/bash
+
+	echo "Unlocking encrypted Nextcloud data volume..."
+	sudo cryptsetup open /mnt/ord_media/ncdata.img ncdata || exit 1
+
+	echo "Mounting decrypted volume..."
+	sudo mount /dev/mapper/ncdata /mnt/mydocs/nextcloud_data || exit 1
+
+	echo "Starting Nextcloud..."
+	cd ~/nextcloud || exit 1
+	docker compose up -d
+
+	echo "Done. Cloud is running with encrypted data."
+
+	chmod +x ~/unlock-cloud.sh
+	./unlock-cloud.sh
+
+
+YOUTUBE DOWNLOAD
+
+
+yt-dlp \
+  --js-runtimes deno \
+  --ignore-errors \
+  -o "/mnt/ord_media/youtube/sugrue/%(playlist_index)03d - %(title)s.%(ext)s" \
+  "https://www.youtube.com/playlist?list=PLf3BHQMcCfkSau28Qa2-rcligIzR6FHlN"
+
+
+SHELL GPT 
+	- https://github.com/kardolus/chatgpt-cli?tab=readme-ov-file#inst
+
+
+
+APT-GET UPDATE
+	In a nutshell, apt-get update doesn't actually install new versions of software. Instead, it updates the package lists for upgrades for packages that need upgrading, as well as new packages that have just come to the repositories.
+	
+
+
+SECURITY
+	cryptsetup
+
+
+
+CUSTOMISATION
+    gnome-tweaks
+    lxappearance
+
+
+
+
+

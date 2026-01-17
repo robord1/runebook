@@ -1,0 +1,80 @@
+
+autocomplete filename
+
+press tab after writing beginning
+
+
+window manager control
+
+	wmctrl -l
+	wmctrl -r "LibreOffice Calc" -e 0,100,100,800,6
+
+
+
+running program information
+	xprop | grep WM_CLASS | cut -d '"' -f4
+		this gives name/class, use xprop for all info
+
+
+
+profile
+
+	passwd - change password
+
+
+picom
+
+	cat ~/.config/picom.conf
+	picom &
+
+
+memory
+
+	swapon --show
+	
+	free -h
+
+
+
+
+git 
+	stage all file deletions
+		git rm $(git ls-files --deleted)
+
+
+
+Syntax
+
+	Navigation
+		.. - parent directory
+		
+
+Drive 
+	Info
+		df -h 
+		lsblk
+	
+	Format 
+		1. sudo umount /dev/sda1
+		2. sudo mkfs.vfat -n 'NAME' -I /dev/sda1
+		
+Devices
+
+	keyboard start at 67 at g1
+
+
+	xev
+
+	killall xbindkeys && xbindkeys
+	xdg-open ~/.xbindkeysrc
+	xdg-open ~/.Xmodmap
+	xmodmap -pke
+	xmodmap ~/.Xmodmap
+		
+		
+
+Touch - Create file
+gedit - open text file
+xdg-open - open folder
+cat - open file in terminal
+echo - write to file in terminal, use < to overwrite or << to append when writing filename 

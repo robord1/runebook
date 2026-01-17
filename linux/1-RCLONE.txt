@@ -1,0 +1,7 @@
+
+rclone bisync ~/Desktop dcrypt:main --exclude "/.git/**"
+
+
+
+rclone bisync ~/Desktop dcrypt:main
+
