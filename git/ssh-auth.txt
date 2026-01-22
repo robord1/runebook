@@ -1,0 +1,37 @@
+
+SEE WHAT KEYS ALREADY EXIST
+
+    - Mac : ls -al ~/.ssh
+
+
+
+GENERATE NEW KEY 
+
+    - ssh-keygen -t ed25519 -C "your_email@example.com"
+    - get hit with prompt : Enter file in which to save the key (/Users/you/.ssh/id_ed25519):
+        -   add this: /Users/{user}/.ssh/id_ed25519{insert key identifer here}
+    - this creates: 
+        ~/.ssh/id_ed25519_github ← private key (SECRET)
+        ~/.ssh/id_ed25519_github.pub ← public key (safe to share)
+    - start agent: eval "$(ssh-agent -s)" (usually already runnning on mac)
+    - add the new key: ssh-add ~/.ssh/id_ed25519_robs_new_key
+
+
+    - for multiple keys create or modify file ~/.ssh/config
+    - add: 
+        Host github.com
+            HostName github.com
+            User git
+            IdentityFile ~/.ssh/id_ed25519_robs_new_key
+            AddKeysToAgent yes
+            UseKeychain yes
+
+    - copy the public key: cat ~/.ssh/id_ed25519_robs_new_key.pub / pbcopy < ~/.ssh/id_ed25519_robs_new_key.pub
+
+
+    - add to github
+    - test: ssh -T git@github.com
+
+
+
+
