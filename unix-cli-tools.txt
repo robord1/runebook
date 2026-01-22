@@ -9,7 +9,7 @@ CONNECT
 TOGGLE LOCAL SSH
 
 	- ip addr show
-	- 192.168.0.102/24
+	- 192.168.0.102:22
 	- sudo systemctl edit ssh.socket
 	- sudo systemctl daemon-reload
 	- sudo systemctl restart ssh.socket
@@ -107,6 +107,8 @@ yt-dlp \
   --ignore-errors \
   -o "/mnt/ord_media/youtube/sugrue/%(playlist_index)03d - %(title)s.%(ext)s" \
   "https://www.youtube.com/playlist?list=PLf3BHQMcCfkSau28Qa2-rcligIzR6FHlN"
+
+
 
 
 SHELL GPT 
