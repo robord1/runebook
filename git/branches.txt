@@ -1,0 +1,70 @@
+
+Rename branch 
+    - git branch -m old-name new-name
+
+
+See local vs remote branches
+    - git branch -a
+
+Delete remote branch
+    - git push origin --delete bname
+
+Push branch to remote
+    - git push -u origin bname
+
+Set branch upstream
+    - git branch -u origin/bname
+
+
+
+Compare branches
+    - git diff --name-status main..image-view-fix
+    - git log main..feature-branch --oneline
+
+
+
+
+See what branch you’re on + what exists
+    - git status
+    - git branch
+
+
+
+Create and switch to a new branch (modern way)
+    - One command (best habit):
+        - git switch -c feature/coredata-cleanup
+
+            This does two things:
+
+            Creates branch
+
+            Switches to it
+
+
+
+Switch between existing branches
+    - git switch main
+    - git switch feature/coredata-cleanup
+
+
+
+
+Merge branch back into main
+
+    - Switch to main (merge target):
+
+        - git switch main
+
+    - Make sure main is clean:
+
+        - git status
+
+    - Merge:
+
+        - git merge feature/coredata-cleanup
+
+
+
+Push branches to GitHub 
+
+    - git push -u origin feature/coredata-cleanup
